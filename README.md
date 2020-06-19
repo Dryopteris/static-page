@@ -1,3 +1,7 @@
+# static-page
+
+Hosted page: https://dryopteris.github.io/static-page/
+
 # oauthExample
 
 [![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
