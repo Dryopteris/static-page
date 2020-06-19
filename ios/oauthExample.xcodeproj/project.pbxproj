@@ -60,6 +60,7 @@
 		2D02E4901E0B4A5D006451C7 /* oauthExample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "oauthExample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		343AE658679784CD9A5BAA48 /* Pods-oauthExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauthExample.debug.xcconfig"; path = "Target Support Files/Pods-oauthExample/Pods-oauthExample.debug.xcconfig"; sourceTree = "<group>"; };
 		60D0F3F45EB502E026647535 /* Pods-oauthExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauthExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-oauthExample-tvOS/Pods-oauthExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		7A2E665F249D3BDB00AE3E23 /* oauthExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = oauthExample.entitlements; path = oauthExample/oauthExample.entitlements; sourceTree = "<group>"; };
 		7DB3838F859798B192268F2E /* libPods-oauthExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-oauthExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94450EF3F70F3B1E94F70EF8 /* Pods-oauthExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauthExampleTests.release.xcconfig"; path = "Target Support Files/Pods-oauthExampleTests/Pods-oauthExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA29B5C0E8631C5A7F5BDA57 /* Pods-oauthExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauthExample.release.xcconfig"; path = "Target Support Files/Pods-oauthExample/Pods-oauthExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* oauthExample */ = {
 			isa = PBXGroup;
 			children = (
+				7A2E665F249D3BDB00AE3E23 /* oauthExample.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -195,17 +197,15 @@
 				04E2DA1425CF4EBFBE3AFF35 /* Pods-oauthExampleTests.debug.xcconfig */,
 				94450EF3F70F3B1E94F70EF8 /* Pods-oauthExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		EEFDBE42A4EA4144B706291C /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -301,6 +301,10 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = D95XHVNG2Z;
+						ProvisioningStyle = Manual;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -317,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -635,8 +640,11 @@
 			baseConfigurationReference = 343AE658679784CD9A5BAA48 /* Pods-oauthExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = oauthExample/oauthExample.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = D95XHVNG2Z;
 				INFOPLIST_FILE = oauthExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -644,8 +652,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ford.credit.mobile;
 				PRODUCT_NAME = oauthExample;
+				PROVISIONING_PROFILE_SPECIFIER = "Ford Credit Mobile Dev Profile";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -655,7 +664,10 @@
 			baseConfigurationReference = BA29B5C0E8631C5A7F5BDA57 /* Pods-oauthExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = oauthExample/oauthExample.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D95XHVNG2Z;
 				INFOPLIST_FILE = oauthExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -663,8 +675,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ford.credit.mobile;
 				PRODUCT_NAME = oauthExample;
+				PROVISIONING_PROFILE_SPECIFIER = "Ford Credit Mobile Dev Profile";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
