@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <meta http-equiv="refresh" content="3; URL=com.ford.credit.mobile:/redirect" />
+  <meta http-equiv="refresh" content="10; URL=com.ford.credit.mobile:/redirect" />
   <head>
     <title></title>
     <style>
@@ -11,8 +11,14 @@
         display: block;
       }
     </style>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const authCode = urlParams.get('code');
+    </script>
   </head>
   <body>
     <h1 class="center">Redirecting you back to the app</h1>
+    <br/>
+    <h3>The authCode is: $authCode</h3>
   </body>
 </html>
